@@ -1,0 +1,19 @@
+
+1.-TO GET DATABASE RUNNING YOU MUSH CREATE A SQL SERVER INSTANCE WITH THE COMMAND:
+docker-compose up  -->COMMAND ON THE ROOT OF FOLDER NAMED -->docker-sql-server-image
+***you must have running docker for desktop
+************************************************************************************************************
+2.- YOU NEED TO CONNECT TO THE DATABASE USING A SQL SERVER CLIENT APP, 
+USING THIS DATA:
+SERVER: .
+USER: sa
+PASSWORD: Password0!
+DATABASE: DB_VIRTUAL_MIND_TEST
+*** this that is contained on docker folder and db-scripts folder.
+THEN EXECUTE CREATE DATABASE SCRIPT THAT IS INSIDE FOLDER NAMED --> bd-scripts
+***YOU NEED TO EXECUTE SCRIPT STEP BY STEP.
+************************************************************************************************************
+3.-ONCE YOU HAVE THE DATABASE CREATED OPEN CLI TERMINAL ON VS 2019 AND EXECUTE DOT NET COMMAND:
+***ON NET CLI YOU MUST RUN THIS COMMAND -->dotnet ef database update
+***this command run the data base update so the code first aproach is going to created tables with class scripts
+located on the route: C:\Users\%USER%\ROOT_LOCATION\TEST_VIRTUAL_MIND\back_end\VirtualMind.API\Migrations\

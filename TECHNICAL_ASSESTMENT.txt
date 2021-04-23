@@ -1,0 +1,47 @@
+TECHNICAL EVALUATION
+We would need you to create a web api in .NET that exposes two endpoints:
+1) One that returns the quotation of the day of a currency, where the identifier of the
+currency is input from the endpoint. Only "dollar" and "real" currencies will be accepted. When
+ask for the quote on anything else, return an error with an appropriate message.
+The dollar price will be obtained from the following external service:
+http://www.bancoprovincia.com.ar/Principal/Dolar.
+The price of the real will be a quarter of the price of the dollar.
+Bear in mind that in the future it will be intended to obtain the quotation of the real from another
+external service that is being developed by an external team. It is also intended
+incorporate in the future a new currency, the Canadian dollar, as an accepted currency
+by our Api
+2) Another who makes a purchase of a coin. Given a user id, amount to buy
+in Argentine pesos and currency identifier, the endpoint will carry out a transaction that
+will store said purchase in the database registering the user and the amounts
+purchased in the unit of currency (dollar or real). For example, given the amount 1000 and the
+"dollar" currency, a purchase will be registered in the database with a value resulting from
+1000 / {dollar price of the day} dollars.
+You need to validate the amounts to buy. For the dollar, the limit is 200. For the real,
+the limit is 300. All limits are in foreign currency, per user and per month.
+Any other requested currency should be answered with an error and appropriate message.
+For the database, make the layout as simple as possible. Assume that
+Users exist and there is no need to apply validations on the user.
+
+Just validate the
+monthly purchases per user. That is, only the transactions. Include base scripts
+data that is necessary, such as the creation of the DB and table 2a) What do you think of passing the user id as input from the endpoint? How would you improve
+transaction to ensure that the user who requested the purchase is who they say they are?
+It will be valued:
+- That the web API is in NET Core.
+- Service-oriented development
+- Good practices for the development of endpoints (HTTP verbs, routes, codes of
+HTTP status, etc)
+- Good exception handling
+- Object-oriented development
+- Added unit tests for services
+- Error logging
+Angular - Optional
+Make a very simple app in Angular 2+ that has two pages / paths:
+a) / quotes, which shows the prices of the real and dollar currencies using the
+Api developed in the previous point. Add a button to update
+quotes.
+b) / purchase, which lists the same quotes from a) and a mini purchase form, with
+three text fields to capture user ID, currency and amount to buy in
+pesos; and a button to make the purchase effective through our Api. Show the
+result of the transaction.
+Show a loading wheel while checking out
